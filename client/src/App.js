@@ -4,19 +4,15 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
-
-
-
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
 
-// using code from module 21
 // establish apollo client
 const client = new ApolloClient({
   request: operation => {
-    const token = localstorage.getItem('id_token');
+    const token = localStorage.getItem('id_token');
 
     operation.setContext({
       headers: {
@@ -26,8 +22,6 @@ const client = new ApolloClient({
   },
   uri: '/graphql'
 });
-
-
 
 
 function App() {
