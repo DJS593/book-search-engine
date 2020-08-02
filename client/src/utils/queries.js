@@ -15,8 +15,7 @@ export const QUERY_GET_ME = gql`
         title
         image
         link
-      }
-      
+      }      
     }
   }
 `;

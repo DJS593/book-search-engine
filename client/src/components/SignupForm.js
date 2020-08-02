@@ -24,26 +24,25 @@ const SignupForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+    // // check if form has everything (as per react-bootstrap docs)
+    // const form = event.currentTarget;
+    // if (form.checkValidity() === false) {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+    // }
 
     try {
-      const response = await createUser(userFormData);
+      const { data } = await addUser({
+        variables: { ...userFormData}
+      });
 
-      if (!response.ok) {
+      if (error) {
         throw new Error('something went wrong!');
       }
 
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
+      Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
-      setShowAlert(true);
     }
 
     setUserFormData({
@@ -55,12 +54,14 @@ const SignupForm = () => {
 
   return (
     <>
-      {/* This is needed for the validation functionality above */}
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-        {/* show alert if server response is bad */}
-        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
-          Something went wrong with your signup!
-        </Alert>
+      <Form 
+        onSubmit={handleFormSubmit}
+      >
+        {error ? (
+          <Alert dismissible variant='danger'>
+            Something went wrong with your signup!
+          </Alert>
+        ) : ''}
 
         <Form.Group>
           <Form.Label htmlFor='username'>Username</Form.Label>
@@ -110,5 +111,4 @@ const SignupForm = () => {
     </>
   );
 };
-
 export default SignupForm;
