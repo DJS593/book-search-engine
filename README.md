@@ -19,7 +19,7 @@
   Since the application utilizes a databaase, it should be housed on a platform that supports this functionality.  For example, the app does not reside on a GitHub pages, but on heroku instead: https://book-search-engine-5000.herokuapp.com/.
 
   ## Usage Instructions <a name="usage"></a>
-  For any user who wants a simple budgeting tool.  In addition, the PWA functionality of the app can be used for other applications as well.
+  For any user who wants a simple search tool.  The tool quickly searches for books by title or author.  In addition, an image of the book is rendered.
 
   ## License <a name="license"></a>
   MIT
