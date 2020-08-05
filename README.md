@@ -1,10 +1,8 @@
-# **book-search-engine**
+# **Book-Search-Engine**
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description 
-  Budget Tracker PWA is a budgeting tool that offers functionality even when the user is disconnected from the internet (progressive web application).  The user can add a transaction description and amount, which is either debited or credited from the total depending on button clicked.  In addition, the app contains a graph, so balance changes can be viewed over a period of time.  
-
-  Behind the scenes, the app is utilizing indexed DB and a service worker to allow the user to continue adding transactions even if disconnected from the internet.  Once an internet connection is restored, the database is updated with all transactions added while offline.  
+  Book Search Engine is a search tool, using the Google Books API, that allows the user to search for books and add / remove from their personal list.  The application utilizes the MERN stack (MongoDB, Express.js, React and Node.js).  In addition the application is bootstrapped with the Create React App.    
   
   ## Table of Contents
   * [Installation](#installation)
@@ -16,10 +14,10 @@
   * [Example](#example)
   
   ## Installation Instructions <a name="installation"></a> 
-  A user will need to clone the repository "budget-tracker-PWA" and then run npm install.  The dependencies that will be installed include mongoose, express, compression and morgan.  In addition, the user needs to have access to mongoDB.
+  A user will need to clone the repository "book-search-engine" and then run npm install at the root of 'book-search-engine' as well as the root of the client and server folders.  The dependencies that will be installed include react, apollo-boost, bootstrap, graphql, jwt-decode, react-bootstrap, react-dom, react-router-dom, apollo-server-express, express, jsonwebtoken and mongoose (note: not all dependencies are listed, but can be viewed in the package.json files).  In addition, the user needs to have access to mongoDB.
 
-  Since the application utilizes a databaase, it should be housed on a platform that supports this functionality.  For example, the app does not reside on a GitHub pages, but on heroku instead: https://budget-tracker-5000.herokuapp.com/.
-  
+  Since the application utilizes a databaase, it should be housed on a platform that supports this functionality.  For example, the app does not reside on a GitHub pages, but on heroku instead: https://book-search-engine-5000.herokuapp.com/.
+
   ## Usage Instructions <a name="usage"></a>
   For any user who wants a simple budgeting tool.  In addition, the PWA functionality of the app can be used for other applications as well.
 
@@ -37,5 +35,5 @@
   
   Email stadj099@yahoo.com with any additional questions. 
   
-  ## Budget-Tracker-PWA Example<a name="example"></a>
-  ![image](https://user-images.githubusercontent.com/61851131/87883771-7f9a2880-c9be-11ea-817e-a8e35c656c09.png)
+  ## Book-Search-Engine Example<a name="example"></a>
+  ![image](https://user-images.githubusercontent.com/61851131/89365265-189c9500-d689-11ea-98cc-468a7aaaaa06.png)
