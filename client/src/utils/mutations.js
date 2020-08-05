@@ -63,8 +63,9 @@ export const SAVE_BOOK = gql`
   }
 `;
 
+// originally has $bookId: ID$, but the app expects a String
 export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: ID!) {
+  mutation removeBook($bookId: String!) {
     removeBook(bookId: $bookId) {
       _id
       username
